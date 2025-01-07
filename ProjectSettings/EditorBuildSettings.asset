@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/TitleScene.unity
+    guid: a2f995ec6e5fd8140aecf637a5cc3a8d
+  - enabled: 1
+    path: Assets/Scenes/Cutscene#1.unity
+    guid: f3a642939b1592645880bc2bfb7781ad
+  - enabled: 1
+    path: Assets/Scenes/StartRoomScene.unity
+    guid: 1ca1dcba222fd614897484e632b5770e
+  - enabled: 1
+    path: Assets/Scenes/SecondRoomScene.unity
+    guid: 8de6e88cadac51f4aa116b57373679a2
+  - enabled: 1
+    path: Assets/Scenes/Scene 3.unity
+    guid: a24c8f15fee945d4ead955dc1dbff2a0
+  - enabled: 1
+    path: Assets/Scenes/Battale Scene #2.unity
+    guid: e06ec37a42dd01549b448fd28c6ddac5
+  - enabled: 1
+    path: Assets/Scenes/Scene 4.unity
+    guid: 874fb4f6e402567478056171296f68ce
+  - enabled: 1
+    path: Assets/Scenes/Scene 5.unity
+    guid: 7437e0e3ee1f6bd44bb65e4f1b5d18e4
+  - enabled: 1
+    path: Assets/Scenes/Scene 6.unity
+    guid: 8abae56b2091f464f9e05c8ad04c147f
+  - enabled: 1
+    path: Assets/Scenes/BattleSceneWolves.unity
+    guid: a116f42ef25793944860593fab363366
+  - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: 82f2af69b18502943ae8e1b19e98e015
+  - enabled: 1
+    path: Assets/Scenes/StartRoomSceneNew.unity
+    guid: 2a1e3adfc4911ed46ad7d7cd5ff0cca8
+  - enabled: 1
+    path: Assets/Scenes/Scene 3 NEW.unity
+    guid: 884abe66f1f4bc44898f1f3246589018
+  - enabled: 1
+    path: Assets/Scenes/Battle Scene city.unity
+    guid: f0265c5c80a77e849a8e6fdece3e7f77
+  - enabled: 1
+    path: Assets/Scenes/BattleSceneThrone.unity
+    guid: 397d1e93a7feaf44cb5cab7f621365e4
+  - enabled: 1
+    path: Assets/Scenes/Cutscene#3BlueVictory.unity
+    guid: 098264c58e2163f4ea2b1e0138ab8a74
+  - enabled: 1
+    path: Assets/Scenes/Battle Scene slime.unity
+    guid: 792d27b08227c594884438eeddccab4c
+  - enabled: 1
+    path: Assets/Scenes/NoSlimeSecondRoomScene.unity
+    guid: 4e7f8d8fa1add2a448e29a667280007e
+  - enabled: 1
+    path: Assets/Scenes/Scene 4 New.unity
+    guid: b9509624b5db9084fbc53375e995018d
+  - enabled: 1
+    path: Assets/Scenes/BattleScene Red Throne.unity
+    guid: 3e25d8050a687a94fae9a5643351fcb1
+  - enabled: 1
+    path: Assets/Scenes/Cutscene#5RedVictory.unity
+    guid: 4db81c4e1d6758447937989cd7b6ff06
+  m_configObjects: {}
