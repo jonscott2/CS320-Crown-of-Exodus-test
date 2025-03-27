@@ -13,14 +13,22 @@ public class Exampletestscript
 
     //public static Vector3 playerPos = Vector3.zero;
     //public static Quaternion playerDir = Quaternion.identity;
-    //GameObject player = GameObject.Instantiate(playerPrefab, playerPos, playerDir);
+    public static GameObject player = GameObject.Instantiate(playerPrefab);
 
 
     [Test]
     
     public void ExampletestscriptSimplePasses()
     {
-        // Use the Assert class to test conditions
+    Assert.IsNotNull(playerPrefab, "Player prefab not found in Resources");
+    GameObject player = GameObject.Instantiate(playerPrefab);
+    //checks that player game object is running correctly.
+    Assert.IsNotNull(player, "Player is not working");
+
+
+    // Use the Assert class to test conditions
+    //what is actually being tested
+    //Assert.That(player.Unit.currentHP, Is.EqualTo(25f));
     }
 
     // A UnityTest behaves like a coroutine in Play Mode. In Edit Mode you can use
