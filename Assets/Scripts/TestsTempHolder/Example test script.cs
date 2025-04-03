@@ -15,6 +15,8 @@ public class Exampletestscript
     //public static Quaternion playerDir = Quaternion.identity;
     public static GameObject player = GameObject.Instantiate(playerPrefab);
 
+    //public Unit unitscript;
+    //Unit unitRef = instance.GetComponent<Unit>();
 
     [Test]
     
@@ -25,11 +27,14 @@ public class Exampletestscript
     //checks that player game object is running correctly.
     Assert.IsNotNull(player, "Player is not working");
 
+        // Use the Assert class to test conditions
+        //what is actually being tested
 
-    // Use the Assert class to test conditions
-    //what is actually being tested
-    //Assert.That(player.Unit.currentHP, Is.EqualTo(25f));
+    //Unit thisthing = new GameObject().AddComponent<Unit>();
+    //Assert.That(player.GetComponent<Unit>.currentHP, Is.EqualTo(25f));
     }
+
+    //Unit x = player.GetComponent<Unit>.currentHP
 
     // A UnityTest behaves like a coroutine in Play Mode. In Edit Mode you can use
     // `yield return null;` to skip a frame.
