@@ -6,9 +6,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public InputAction moveAction;
     [SerializeField] private float movSpeed = 10f;
     private Vector2 movement;
     private Animator animator;
@@ -39,15 +41,17 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         //this freezes player while in dialogue mode -jon
-        if (Dialoguemanger.GetInstance().dialogueIsPlaying)
-        {
-            return;
-        }
+        //if (Dialoguemanger.GetInstance().dialogueIsPlaying)
+        //{
+        //    return;
+        //}
 
         movement.Set(InputManager.movement.x, InputManager.movement.y);
 
         rb.velocity = movement * movSpeed;
-        
+
+        //Debug.Log($"Velocity: {rb.velocity}");
+
         animator.SetFloat(horizontal, rb.velocity.x);
         animator.SetFloat (vertical, rb.velocity.y);
 
@@ -56,6 +60,16 @@ public class PlayerMovement : MonoBehaviour
             animator.SetFloat(lastHorizontal, movement.x);
             animator.SetFloat(lastVertical, movement.y);
         }
+    }
+
+    private void OnEnable()
+    {
+        moveAction.Enable();
+    }
+
+    private void OnDisable()
+    {
+        moveAction.Disable();
     }
 
 }

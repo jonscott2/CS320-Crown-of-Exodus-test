@@ -8,7 +8,7 @@ public class InputManager : MonoBehaviour
     public static Vector2 movement;
 
     private PlayerInput playerInput;
-    private InputAction movementAction;
+    public InputAction movementAction;
     private void Awake()
     {
         playerInput = GetComponent<PlayerInput>();
