@@ -5706,11 +5706,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5.73, y: 6.04}
   m_EdgeRadius: 0
---- !u!4 &1090552667 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3264831595470696088, guid: 9af026272fa8fd144b992aa10e9a13b5, type: 3}
-  m_PrefabInstance: {fileID: 1605364622}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1093106662
 GameObject:
   m_ObjectHideFlags: 0
@@ -8362,7 +8357,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveAction:
-    m_Name: 
+    m_Name: Move
     m_Type: 0
     m_ExpectedControlType: 
     m_Id: a9ac6122-725e-4b30-9d28-f9de3a5f832d
@@ -8448,9 +8443,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 1533439668}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0adef0c837f8d4540b6fb01a96c4e801, type: 3}
+  m_Script: {fileID: 11500000, guid: 5cd17a6fff1d6134188153a910ca4226, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  movementAction:
+    m_Name: Movement
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 05eefbac-2019-45ad-bf03-8909bbfe2030
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
 --- !u!1001 &1543324878
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9000,67 +9004,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 348305362}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1605364622
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 1828124137}
-    m_Modifications:
-    - target: {fileID: 3264831595470696088, guid: 9af026272fa8fd144b992aa10e9a13b5, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 9.19
-      objectReference: {fileID: 0}
-    - target: {fileID: 3264831595470696088, guid: 9af026272fa8fd144b992aa10e9a13b5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1.63
-      objectReference: {fileID: 0}
-    - target: {fileID: 3264831595470696088, guid: 9af026272fa8fd144b992aa10e9a13b5, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.1645292
-      objectReference: {fileID: 0}
-    - target: {fileID: 3264831595470696088, guid: 9af026272fa8fd144b992aa10e9a13b5, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7660445
-      objectReference: {fileID: 0}
-    - target: {fileID: 3264831595470696088, guid: 9af026272fa8fd144b992aa10e9a13b5, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3264831595470696088, guid: 9af026272fa8fd144b992aa10e9a13b5, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3264831595470696088, guid: 9af026272fa8fd144b992aa10e9a13b5, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.6427876
-      objectReference: {fileID: 0}
-    - target: {fileID: 3264831595470696088, guid: 9af026272fa8fd144b992aa10e9a13b5, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3264831595470696088, guid: 9af026272fa8fd144b992aa10e9a13b5, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3264831595470696088, guid: 9af026272fa8fd144b992aa10e9a13b5, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 80
-      objectReference: {fileID: 0}
-    - target: {fileID: 3264831595470696094, guid: 9af026272fa8fd144b992aa10e9a13b5, type: 3}
-      propertyPath: m_Name
-      value: PF Village Props - Heavy Sword
-      objectReference: {fileID: 0}
-    - target: {fileID: 3264831595470696095, guid: 9af026272fa8fd144b992aa10e9a13b5, type: 3}
-      propertyPath: m_SortingOrder
-      value: 2
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 9af026272fa8fd144b992aa10e9a13b5, type: 3}
 --- !u!1 &1616592886
 GameObject:
   m_ObjectHideFlags: 0
@@ -9404,7 +9347,6 @@ Transform:
   - {fileID: 134818586}
   - {fileID: 1986419100}
   - {fileID: 197493962}
-  - {fileID: 1090552667}
   - {fileID: 1991816874}
   - {fileID: 119511227}
   - {fileID: 823259702}

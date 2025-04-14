@@ -6,7 +6,7 @@ using System.Collections;
 using UnityEditor;
 using UnityEngine.SceneManagement;
 
-public class CollisionsTestStartRoom
+public class CollisionsTestStartRoom : InputTestFixture
 {
     private GameObject player;
     private PlayerMovement controller;
@@ -77,6 +77,15 @@ public class CollisionsTestStartRoom
         // Use the Assert class to test conditions.
         // Use yield to skip a frame.
         yield return new WaitForSeconds(10.1f);
+
+        Vector3 startPos = player.transform.position;
+        Debug.Log($"Start Position Y: {startPos.y}");
+
+        // Simulate pressing the W key
+        Press(Keyboard.current.wKey);
+        yield return new WaitForSeconds(0.1f);  // Allow time for movement
+        Release(Keyboard.current.wKey);
+
         yield return null;
     }
 }
