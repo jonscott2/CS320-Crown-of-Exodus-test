@@ -3,47 +3,52 @@ using UnityEngine.InputSystem;
 using UnityEngine.TestTools;
 using NUnit.Framework;
 using System.Collections;
-using UnityEditor;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem.LowLevel;
+using System.Collections.Generic;
 
-public class CollisionsTestStartRoom : InputTestFixture
+public class CollsionTest : InputTestFixture
 {
     private GameObject player;
-    private PlayerMovement controller;
+    private PlayerController controller;
     private InputAction moveAction;
-    private InputManager inputManager;
-    private Camera testCamera;
+    private Keyboard testKeyboard;
+
 
     [SetUp]
-    public void Setup()
+    public override void Setup()
     {
-        // Load scene asynchronously
-        SceneManager.LoadScene("StartRoomScene", LoadSceneMode.Single);
-        // Yield for the scene to load
-        // Allow one frame for the scene to load
-        //yield return null;
+        base.Setup(); // Set up the InputTestFixture (keyboard device support etc.)
+    }
 
-        // Camera setup
-        testCamera = new GameObject("TestCamera").AddComponent<Camera>();
-        testCamera.clearFlags = CameraClearFlags.SolidColor; // Set the background color
-        testCamera.backgroundColor = Color.gray; // You can change the color here if you want
-        testCamera.enabled = true;
+    [UnitySetUp]
+    public IEnumerator UnitySetUp()
+    {
+        base.Setup();
 
-        // Position the camera
-        testCamera.transform.position = new Vector3(0, 0, -10); // Adjust to fit the player's view
+        // Load the scene
+        var loadOp = SceneManager.LoadSceneAsync("StartRoomScene", LoadSceneMode.Single);
+        while (!loadOp.isDone)
+            yield return null;
 
-        // Create virtual keyboard to track inputs
-        InputSystem.AddDevice<Keyboard>();
+        yield return null; // Let everything initialize
 
-        // Load and instantiate the player prefab
-        player = GameObject.Instantiate(Resources.Load<GameObject>("PlayerTest"));
-        controller = player.GetComponent<PlayerMovement>();
+        // Create and register a virtual keyboard
+        if (testKeyboard == null)
+        {
+            testKeyboard = InputSystem.AddDevice<Keyboard>();
+        }
+        InputSystem.QueueStateEvent(testKeyboard, new KeyboardState());
+        InputSystem.Update();
 
-        // Ensure InputManager is attached to the player
-        inputManager = player.GetComponent<InputManager>();
-        Assert.NotNull(inputManager);  // Assert to ensure InputManager exists
+        // Find the Player
+        player = GameObject.FindWithTag("Player");
+        Assert.IsNotNull(player, "Couldn't find Player in scene. Make sure it is tagged 'Player'.");
 
-        // Create and bind InputAction for movement (so PlayerMovement can respond to them)
+        controller = player.GetComponent<PlayerController>();
+        Assert.IsNotNull(controller, "PlayerController script not found.");
+
+        // Create and assign test InputAction
         moveAction = new InputAction(type: InputActionType.Value);
         moveAction.AddCompositeBinding("2DVector")
             .With("Up", "<Keyboard>/w")
@@ -51,41 +56,105 @@ public class CollisionsTestStartRoom : InputTestFixture
             .With("Left", "<Keyboard>/a")
             .With("Right", "<Keyboard>/d");
 
-        // Assign moveAction to PlayerMovement script's moveAction field
-        controller.moveAction = moveAction;
-
-        // Enable the action to listen for input
         moveAction.Enable();
 
-        // Enable the InputManager's action to ensure it tracks movement
-        inputManager.movementAction = moveAction;
+        // Inject this test action into the controller
+        controller.playerControlls = moveAction;
     }
 
-
-    // A Test behaves as an ordinary method
-    [Test]
-    public void CollisionsTestStartRoomSimplePasses()
+    [TearDown]
+    public void SimpleTearDown()
     {
-        // Use the Assert class to test conditions
+        if (testKeyboard != null)
+        {
+            InputSystem.RemoveDevice(testKeyboard);
+            testKeyboard = null;
+        }
+
+        if (moveAction != null)
+        {
+            moveAction.Disable();
+            moveAction.Dispose();
+            moveAction = null;
+        }
+
+        player = null;
+        controller = null;
     }
 
-    // A UnityTest behaves like a coroutine in Play Mode. In Edit Mode you can use
-    // `yield return null;` to skip a frame.
     [UnityTest]
-    public IEnumerator CollisionsTestStartRoomWithEnumeratorPasses()
+    public IEnumerator PlayerMovesUpWhenWIsPressed()
     {
-        // Use the Assert class to test conditions.
-        // Use yield to skip a frame.
-        yield return new WaitForSeconds(10.1f);
+        yield return new WaitForSeconds(0.5f); // Wait for scene setup
 
-        Vector3 startPos = player.transform.position;
-        Debug.Log($"Start Position Y: {startPos.y}");
+        // Add virtual keyboard
+        var keyboard = InputSystem.AddDevice<Keyboard>();
 
-        // Simulate pressing the W key
-        Press(Keyboard.current.wKey);
-        yield return new WaitForSeconds(0.1f);  // Allow time for movement
-        Release(Keyboard.current.wKey);
+        // Re-assign controls to use this keyboard
+        controller.playerControlls = new InputAction(type: InputActionType.Value);
+        controller.playerControlls.AddCompositeBinding("2DVector")
+            .With("Up", keyboard.wKey.path)
+            .With("Down", keyboard.sKey.path)
+            .With("Left", keyboard.aKey.path)
+            .With("Right", keyboard.dKey.path);
+        controller.playerControlls.Enable();
 
-        yield return null;
+        // Manually hook up the OnMove callback if needed
+        controller.playerControlls.performed += controller.OnMove;
+        controller.playerControlls.canceled += controller.OnMove;
+
+        yield return new WaitForSeconds(0.1f); // Wait for enable
+
+        Vector3 startPos = controller.transform.position;
+
+        // first move up
+        Press(keyboard.wKey);
+        yield return new WaitForSeconds(1.5f); // Let movement happen
+        Release(keyboard.wKey);
+
+        yield return new WaitForSeconds(.5f); // Let it settle
+
+        // move left
+        Press(keyboard.aKey);
+        yield return new WaitForSeconds(1.5f); // Let movement happen
+        Release(keyboard.aKey);
+
+        yield return new WaitForSeconds(.5f); // Let it settle
+
+        // move down
+        Press(keyboard.sKey);
+        yield return new WaitForSeconds(0.5f); // Let movement happen
+        Release(keyboard.sKey);
+
+        // move left
+        Press(keyboard.aKey);
+        yield return new WaitForSeconds(2.0f); // Let movement happen
+        Release(keyboard.aKey);
+
+        // move right
+        Press(keyboard.dKey);
+        yield return new WaitForSeconds(0.5f); // Let movement happen
+        Release(keyboard.dKey);
+
+        // move down
+        Press(keyboard.sKey);
+        yield return new WaitForSeconds(0.5f); // Let movement happen
+        Release(keyboard.sKey);
+
+        yield return new WaitForSeconds(1.0f);
+
+        // move right
+        Press(keyboard.dKey);
+        yield return new WaitForSeconds(0.5f); // Let movement happen
+        Release(keyboard.dKey);
+
+        yield return new WaitForSeconds(1.0f);
+
+        Vector3 endPos = controller.transform.position;
+        Debug.Log($"Moved from {startPos} to {endPos}");
+
+        Assert.AreNotEqual(startPos.y, endPos.y, "Player did not move vertically after pressing W.");
+
+        keyboard = null;
     }
 }

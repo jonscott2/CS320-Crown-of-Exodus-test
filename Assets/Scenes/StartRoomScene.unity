@@ -7324,7 +7324,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1400141613
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7332,7 +7332,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1400141612}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
@@ -7362,13 +7362,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1400141612}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5cd17a6fff1d6134188153a910ca4226, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   movementAction:
-    m_Name: 
+    m_Name: Movement
     m_Type: 0
     m_ExpectedControlType: 
     m_Id: 16355c31-e561-4f62-88ed-69c4f8858ebd
@@ -8254,6 +8254,8 @@ GameObject:
   - component: {fileID: 1533439671}
   - component: {fileID: 1533439670}
   - component: {fileID: 1533439669}
+  - component: {fileID: 1533439676}
+  - component: {fileID: 1533439677}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -8428,7 +8430,7 @@ Transform:
   m_GameObject: {fileID: 1533439668}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.21, y: 3.89, z: 0}
+  m_LocalPosition: {x: -4.22, y: -0.29, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8455,6 +8457,168 @@ MonoBehaviour:
     m_Interactions: 
     m_SingletonActionBindings: []
     m_Flags: 0
+--- !u!114 &1533439676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1533439668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 5c6e61b215946584dbf0b8ad01883a84, type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 409ca388-05fa-44aa-81ce-8797017f8a58
+    m_ActionName: Player/InteractButtonPressed[/Keyboard/i,/Keyboard1/i,/Keyboard2/i,/Keyboard3/i,/Keyboard4/i,/Keyboard5/i,/Keyboard6/i,/Keyboard7/i,/Keyboard8/i,/Keyboard9/i,/Keyboard10/i,/Keyboard11/i,/Keyboard12/i,/Keyboard13/i,/Keyboard14/i,/Keyboard15/i,/Keyboard16/i,/Keyboard17/i,/Keyboard18/i,/Keyboard19/i,/Keyboard20/i,/Keyboard21/i,/Keyboard22/i,/Keyboard23/i,/Keyboard24/i,/Keyboard25/i,/Keyboard26/i,/Keyboard27/i,/Keyboard28/i,/Keyboard29/i,/Keyboard30/i,/Keyboard31/i]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 549ee328-1bee-42d4-8ee7-701f6a888faf
+    m_ActionName: Player/SubmitButtonPressed[/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1533439677}
+        m_TargetAssemblyTypeName: PlayerController, Referencesfortesting
+        m_MethodName: OnMove
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 5348e4a3-36cd-4229-8f17-6adfa0f59a45
+    m_ActionName: Player/Movement[/Keyboard/w,/Keyboard1/w,/Keyboard2/w,/Keyboard3/w,/Keyboard4/w,/Keyboard5/w,/Keyboard6/w,/Keyboard7/w,/Keyboard8/w,/Keyboard9/w,/Keyboard10/w,/Keyboard11/w,/Keyboard12/w,/Keyboard13/w,/Keyboard14/w,/Keyboard15/w,/Keyboard16/w,/Keyboard17/w,/Keyboard18/w,/Keyboard19/w,/Keyboard20/w,/Keyboard21/w,/Keyboard22/w,/Keyboard23/w,/Keyboard24/w,/Keyboard25/w,/Keyboard26/w,/Keyboard27/w,/Keyboard28/w,/Keyboard29/w,/Keyboard30/w,/Keyboard31/w,/Keyboard/s,/Keyboard1/s,/Keyboard2/s,/Keyboard3/s,/Keyboard4/s,/Keyboard5/s,/Keyboard6/s,/Keyboard7/s,/Keyboard8/s,/Keyboard9/s,/Keyboard10/s,/Keyboard11/s,/Keyboard12/s,/Keyboard13/s,/Keyboard14/s,/Keyboard15/s,/Keyboard16/s,/Keyboard17/s,/Keyboard18/s,/Keyboard19/s,/Keyboard20/s,/Keyboard21/s,/Keyboard22/s,/Keyboard23/s,/Keyboard24/s,/Keyboard25/s,/Keyboard26/s,/Keyboard27/s,/Keyboard28/s,/Keyboard29/s,/Keyboard30/s,/Keyboard31/s,/Keyboard/a,/Keyboard1/a,/Keyboard2/a,/Keyboard3/a,/Keyboard4/a,/Keyboard5/a,/Keyboard6/a,/Keyboard7/a,/Keyboard8/a,/Keyboard9/a,/Keyboard10/a,/Keyboard11/a,/Keyboard12/a,/Keyboard13/a,/Keyboard14/a,/Keyboard15/a,/Keyboard16/a,/Keyboard17/a,/Keyboard18/a,/Keyboard19/a,/Keyboard20/a,/Keyboard21/a,/Keyboard22/a,/Keyboard23/a,/Keyboard24/a,/Keyboard25/a,/Keyboard26/a,/Keyboard27/a,/Keyboard28/a,/Keyboard29/a,/Keyboard30/a,/Keyboard31/a,/Keyboard/d,/Keyboard1/d,/Keyboard2/d,/Keyboard3/d,/Keyboard4/d,/Keyboard5/d,/Keyboard6/d,/Keyboard7/d,/Keyboard8/d,/Keyboard9/d,/Keyboard10/d,/Keyboard11/d,/Keyboard12/d,/Keyboard13/d,/Keyboard14/d,/Keyboard15/d,/Keyboard16/d,/Keyboard17/d,/Keyboard18/d,/Keyboard19/d,/Keyboard20/d,/Keyboard21/d,/Keyboard22/d,/Keyboard23/d,/Keyboard24/d,/Keyboard25/d,/Keyboard26/d,/Keyboard27/d,/Keyboard28/d,/Keyboard29/d,/Keyboard30/d,/Keyboard31/d]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ce528a50-31a0-4f71-a319-7aefc060bb7d
+    m_ActionName: Player/Menu[/Keyboard/space,/Keyboard1/space,/Keyboard2/space,/Keyboard3/space,/Keyboard4/space,/Keyboard5/space,/Keyboard6/space,/Keyboard7/space,/Keyboard8/space,/Keyboard9/space,/Keyboard10/space,/Keyboard11/space,/Keyboard12/space,/Keyboard13/space,/Keyboard14/space,/Keyboard15/space,/Keyboard16/space,/Keyboard17/space,/Keyboard18/space,/Keyboard19/space,/Keyboard20/space,/Keyboard21/space,/Keyboard22/space,/Keyboard23/space,/Keyboard24/space,/Keyboard25/space,/Keyboard26/space,/Keyboard27/space,/Keyboard28/space,/Keyboard29/space,/Keyboard30/space,/Keyboard31/space,/Keyboard/q,/Keyboard1/q,/Keyboard2/q,/Keyboard3/q,/Keyboard4/q,/Keyboard5/q,/Keyboard6/q,/Keyboard7/q,/Keyboard8/q,/Keyboard9/q,/Keyboard10/q,/Keyboard11/q,/Keyboard12/q,/Keyboard13/q,/Keyboard14/q,/Keyboard15/q,/Keyboard16/q,/Keyboard17/q,/Keyboard18/q,/Keyboard19/q,/Keyboard20/q,/Keyboard21/q,/Keyboard22/q,/Keyboard23/q,/Keyboard24/q,/Keyboard25/q,/Keyboard26/q,/Keyboard27/q,/Keyboard28/q,/Keyboard29/q,/Keyboard30/q,/Keyboard31/q]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: f8f6efd4-0314-4e8e-aebe-599925d0f596
+    m_ActionName: UI/Navigate[/Keyboard/w,/Keyboard1/w,/Keyboard2/w,/Keyboard3/w,/Keyboard4/w,/Keyboard5/w,/Keyboard6/w,/Keyboard7/w,/Keyboard8/w,/Keyboard9/w,/Keyboard10/w,/Keyboard11/w,/Keyboard12/w,/Keyboard13/w,/Keyboard14/w,/Keyboard15/w,/Keyboard16/w,/Keyboard17/w,/Keyboard18/w,/Keyboard19/w,/Keyboard20/w,/Keyboard21/w,/Keyboard22/w,/Keyboard23/w,/Keyboard24/w,/Keyboard25/w,/Keyboard26/w,/Keyboard27/w,/Keyboard28/w,/Keyboard29/w,/Keyboard30/w,/Keyboard31/w,/Keyboard/upArrow,/Keyboard1/upArrow,/Keyboard2/upArrow,/Keyboard3/upArrow,/Keyboard4/upArrow,/Keyboard5/upArrow,/Keyboard6/upArrow,/Keyboard7/upArrow,/Keyboard8/upArrow,/Keyboard9/upArrow,/Keyboard10/upArrow,/Keyboard11/upArrow,/Keyboard12/upArrow,/Keyboard13/upArrow,/Keyboard14/upArrow,/Keyboard15/upArrow,/Keyboard16/upArrow,/Keyboard17/upArrow,/Keyboard18/upArrow,/Keyboard19/upArrow,/Keyboard20/upArrow,/Keyboard21/upArrow,/Keyboard22/upArrow,/Keyboard23/upArrow,/Keyboard24/upArrow,/Keyboard25/upArrow,/Keyboard26/upArrow,/Keyboard27/upArrow,/Keyboard28/upArrow,/Keyboard29/upArrow,/Keyboard30/upArrow,/Keyboard31/upArrow,/Keyboard/s,/Keyboard1/s,/Keyboard2/s,/Keyboard3/s,/Keyboard4/s,/Keyboard5/s,/Keyboard6/s,/Keyboard7/s,/Keyboard8/s,/Keyboard9/s,/Keyboard10/s,/Keyboard11/s,/Keyboard12/s,/Keyboard13/s,/Keyboard14/s,/Keyboard15/s,/Keyboard16/s,/Keyboard17/s,/Keyboard18/s,/Keyboard19/s,/Keyboard20/s,/Keyboard21/s,/Keyboard22/s,/Keyboard23/s,/Keyboard24/s,/Keyboard25/s,/Keyboard26/s,/Keyboard27/s,/Keyboard28/s,/Keyboard29/s,/Keyboard30/s,/Keyboard31/s,/Keyboard/downArrow,/Keyboard1/downArrow,/Keyboard2/downArrow,/Keyboard3/downArrow,/Keyboard4/downArrow,/Keyboard5/downArrow,/Keyboard6/downArrow,/Keyboard7/downArrow,/Keyboard8/downArrow,/Keyboard9/downArrow,/Keyboard10/downArrow,/Keyboard11/downArrow,/Keyboard12/downArrow,/Keyboard13/downArrow,/Keyboard14/downArrow,/Keyboard15/downArrow,/Keyboard16/downArrow,/Keyboard17/downArrow,/Keyboard18/downArrow,/Keyboard19/downArrow,/Keyboard20/downArrow,/Keyboard21/downArrow,/Keyboard22/downArrow,/Keyboard23/downArrow,/Keyboard24/downArrow,/Keyboard25/downArrow,/Keyboard26/downArrow,/Keyboard27/downArrow,/Keyboard28/downArrow,/Keyboard29/downArrow,/Keyboard30/downArrow,/Keyboard31/downArrow,/Keyboard/a,/Keyboard1/a,/Keyboard2/a,/Keyboard3/a,/Keyboard4/a,/Keyboard5/a,/Keyboard6/a,/Keyboard7/a,/Keyboard8/a,/Keyboard9/a,/Keyboard10/a,/Keyboard11/a,/Keyboard12/a,/Keyboard13/a,/Keyboard14/a,/Keyboard15/a,/Keyboard16/a,/Keyboard17/a,/Keyboard18/a,/Keyboard19/a,/Keyboard20/a,/Keyboard21/a,/Keyboard22/a,/Keyboard23/a,/Keyboard24/a,/Keyboard25/a,/Keyboard26/a,/Keyboard27/a,/Keyboard28/a,/Keyboard29/a,/Keyboard30/a,/Keyboard31/a,/Keyboard/leftArrow,/Keyboard1/leftArrow,/Keyboard2/leftArrow,/Keyboard3/leftArrow,/Keyboard4/leftArrow,/Keyboard5/leftArrow,/Keyboard6/leftArrow,/Keyboard7/leftArrow,/Keyboard8/leftArrow,/Keyboard9/leftArrow,/Keyboard10/leftArrow,/Keyboard11/leftArrow,/Keyboard12/leftArrow,/Keyboard13/leftArrow,/Keyboard14/leftArrow,/Keyboard15/leftArrow,/Keyboard16/leftArrow,/Keyboard17/leftArrow,/Keyboard18/leftArrow,/Keyboard19/leftArrow,/Keyboard20/leftArrow,/Keyboard21/leftArrow,/Keyboard22/leftArrow,/Keyboard23/leftArrow,/Keyboard24/leftArrow,/Keyboard25/leftArrow,/Keyboard26/leftArrow,/Keyboard27/leftArrow,/Keyboard28/leftArrow,/Keyboard29/leftArrow,/Keyboard30/leftArrow,/Keyboard31/leftArrow,/Keyboard/d,/Keyboard1/d,/Keyboard2/d,/Keyboard3/d,/Keyboard4/d,/Keyboard5/d,/Keyboard6/d,/Keyboard7/d,/Keyboard8/d,/Keyboard9/d,/Keyboard10/d,/Keyboard11/d,/Keyboard12/d,/Keyboard13/d,/Keyboard14/d,/Keyboard15/d,/Keyboard16/d,/Keyboard17/d,/Keyboard18/d,/Keyboard19/d,/Keyboard20/d,/Keyboard21/d,/Keyboard22/d,/Keyboard23/d,/Keyboard24/d,/Keyboard25/d,/Keyboard26/d,/Keyboard27/d,/Keyboard28/d,/Keyboard29/d,/Keyboard30/d,/Keyboard31/d]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: b36baff9-e628-43ca-bc56-078d346082db
+    m_ActionName: UI/Submit[/Keyboard/enter,/Keyboard1/enter,/Keyboard2/enter,/Keyboard3/enter,/Keyboard4/enter,/Keyboard5/enter,/Keyboard6/enter,/Keyboard7/enter,/Keyboard8/enter,/Keyboard9/enter,/Keyboard10/enter,/Keyboard11/enter,/Keyboard12/enter,/Keyboard13/enter,/Keyboard14/enter,/Keyboard15/enter,/Keyboard16/enter,/Keyboard17/enter,/Keyboard18/enter,/Keyboard19/enter,/Keyboard20/enter,/Keyboard21/enter,/Keyboard22/enter,/Keyboard23/enter,/Keyboard24/enter,/Keyboard25/enter,/Keyboard26/enter,/Keyboard27/enter,/Keyboard28/enter,/Keyboard29/enter,/Keyboard30/enter,/Keyboard31/enter]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 0e181da2-672c-4f2d-b096-e3e0b57c167a
+    m_ActionName: UI/Cancel[/Keyboard/escape,/Keyboard1/escape,/Keyboard2/escape,/Keyboard3/escape,/Keyboard4/escape,/Keyboard5/escape,/Keyboard6/escape,/Keyboard7/escape,/Keyboard8/escape,/Keyboard9/escape,/Keyboard10/escape,/Keyboard11/escape,/Keyboard12/escape,/Keyboard13/escape,/Keyboard14/escape,/Keyboard15/escape,/Keyboard16/escape,/Keyboard17/escape,/Keyboard18/escape,/Keyboard19/escape,/Keyboard20/escape,/Keyboard21/escape,/Keyboard22/escape,/Keyboard23/escape,/Keyboard24/escape,/Keyboard25/escape,/Keyboard26/escape,/Keyboard27/escape,/Keyboard28/escape,/Keyboard29/escape,/Keyboard30/escape,/Keyboard31/escape]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: d4bbf31a-85a9-4d05-a11e-b3c98c1ad537
+    m_ActionName: UI/Point[/Mouse/position,/Pen/position]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 4a4a2577-818f-47d1-9104-981e1d12cc35
+    m_ActionName: UI/Click[/Mouse/leftButton,/Pen/tip]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: a18a6f1b-8552-4564-b857-d57a8986a06b
+    m_ActionName: UI/ScrollWheel[/Mouse/scroll]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 762ef1be-f20b-497d-8e00-2194254af03a
+    m_ActionName: UI/MiddleClick[/Mouse/middleButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 98ed3384-75ab-4066-80da-641b0373fa4d
+    m_ActionName: UI/RightClick[/Mouse/rightButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 3b010665-ad51-442a-8f58-42825902b11f
+    m_ActionName: UI/TrackedDevicePosition
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 7a6002b9-cec2-4129-9423-f2ad6e0ef720
+    m_ActionName: UI/TrackedDeviceOrientation
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Player
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
+--- !u!114 &1533439677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1533439668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 002d03439c5e31a45898aea7564c74b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 1533439671}
+  movespeed: 2.5
+  playerControlls:
+    m_Name: Player Controlls
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 2e6a2938-dbb7-46f0-9cfb-42f653e8a5fc
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 2D Vector
+      m_Id: 62d5869b-fa70-4311-8e9e-2f4f92d152b1
+      m_Path: 2DVector
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Player Controlls
+      m_Flags: 4
+    - m_Name: up
+      m_Id: 8faca651-6379-4584-b32e-1e3536ece6f8
+      m_Path: <Keyboard>/w
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Player Controlls
+      m_Flags: 8
+    - m_Name: down
+      m_Id: e87bb646-9e58-4962-a9fd-051a11fab407
+      m_Path: <Keyboard>/s
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Player Controlls
+      m_Flags: 8
+    - m_Name: left
+      m_Id: d154e5da-9e63-4fe6-88ec-ac473b5ae307
+      m_Path: <Keyboard>/a
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Player Controlls
+      m_Flags: 8
+    - m_Name: right
+      m_Id: d8981f3d-8bba-4bce-b330-bdbfc00766a4
+      m_Path: <Keyboard>/d
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Player Controlls
+      m_Flags: 8
+    m_Flags: 0
+  moveDirection: {x: 0, y: 0}
 --- !u!1001 &1543324878
 PrefabInstance:
   m_ObjectHideFlags: 0
