@@ -17,8 +17,8 @@ public class InputManager1 : MonoBehaviour
     private bool submitPressed = false;
     private PlayerInput playerInput;
 
-    public GameObject cutsceneSlot;
-    public Scene currentScene = SceneManager.GetActiveScene();
+    [Serialize] public GameObject cutsceneSlot;
+    [Serialize] public Scene currentScene;
 
     private static InputManager1 instance;
     private InputAction interactAction;
@@ -37,11 +37,20 @@ public class InputManager1 : MonoBehaviour
         interactAction = playerInput.actions["InteractButtonPressed"];
         submitAction = playerInput.actions["SubmitButtonPressed"];
 
+        currentScene = SceneManager.GetActiveScene();
+
     }
 
     private void Start()
     {
-        cutsceneSlot.SetActive(false);
+        if (cutsceneSlot != null)
+        {
+            cutsceneSlot.SetActive(false);
+        }
+        else
+        {
+            Debug.LogWarning("cutsceneSlot is not assigned.");
+        }
     }
 
     private void Update()

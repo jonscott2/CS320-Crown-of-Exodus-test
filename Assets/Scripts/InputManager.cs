@@ -9,14 +9,22 @@ public class InputManager : MonoBehaviour
 
     private PlayerInput playerInput;
     public InputAction movementAction;
-    private void Awake()
+    //private void Awake()
+    //{
+    //    playerInput = GetComponent<PlayerInput>();
+    //    movementAction = playerInput.actions["Movement"];
+    //}
+
+    private void Start()
     {
         playerInput = GetComponent<PlayerInput>();
-        movementAction = playerInput.actions["Movement"];
+        movementAction = playerInput.actions["movement"];
     }
 
     private void Update()
     {
+        playerInput = GetComponent<PlayerInput>();
+        movementAction = playerInput.actions["movement"];
         movement = movementAction.ReadValue<Vector2>();
     }
 }
