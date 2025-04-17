@@ -114,6 +114,62 @@ public class CollsionTest : InputTestFixture
 
         yield return new WaitForSeconds(.5f); // Let it settle
 
+        // move right
+        Press(keyboard.dKey);
+        yield return new WaitForSeconds(3.5f); // Let movement happen
+        Release(keyboard.dKey);
+
+        yield return new WaitForSeconds(.5f); // Let it settle
+
+        // move down
+        Press(keyboard.sKey);
+        yield return new WaitForSeconds(0.35f); // Let movement happen
+        Release(keyboard.sKey);
+
+        yield return new WaitForSeconds(.5f); // Let it settle
+
+        // move right
+        Press(keyboard.dKey);
+        yield return new WaitForSeconds(1.5f); // Let movement happen
+        Release(keyboard.dKey);
+
+        yield return new WaitForSeconds(.5f); // Let it settle
+
+        // move down
+        Press(keyboard.sKey);
+        yield return new WaitForSeconds(0.35f); // Let movement happen
+        Release(keyboard.sKey);
+
+        yield return new WaitForSeconds(.5f); // Let it settle
+
+        // move right
+        Press(keyboard.dKey);
+        yield return new WaitForSeconds(0.5f); // Let movement happen
+        Release(keyboard.dKey);
+
+        yield return new WaitForSeconds(.5f); // Let it settle
+
+        // move down
+        Press(keyboard.sKey);
+        yield return new WaitForSeconds(1.35f); // Let movement happen
+        Release(keyboard.sKey);
+
+        yield return new WaitForSeconds(.5f); // Let it settle
+
+        // move left
+        Press(keyboard.aKey);
+        yield return new WaitForSeconds(2.5f); // Let movement happen
+        Release(keyboard.aKey);
+
+        yield return new WaitForSeconds(.5f); // Let it settle
+
+        // first move up
+        Press(keyboard.wKey);
+        yield return new WaitForSeconds(0.5f); // Let movement happen
+        Release(keyboard.wKey);
+
+        yield return new WaitForSeconds(.5f); // Let it settle
+
         // move left
         Press(keyboard.aKey);
         yield return new WaitForSeconds(1.5f); // Let movement happen
@@ -123,37 +179,82 @@ public class CollsionTest : InputTestFixture
 
         // move down
         Press(keyboard.sKey);
-        yield return new WaitForSeconds(0.5f); // Let movement happen
+        yield return new WaitForSeconds(0.55f); // Let movement happen
         Release(keyboard.sKey);
+
+        yield return new WaitForSeconds(.5f); // Let it settle
 
         // move left
         Press(keyboard.aKey);
-        yield return new WaitForSeconds(2.0f); // Let movement happen
+        yield return new WaitForSeconds(2.8f); // Let movement happen
         Release(keyboard.aKey);
+
+        yield return new WaitForSeconds(.5f); // Let it settle
+
+        // first move up
+        Press(keyboard.wKey);
+        yield return new WaitForSeconds(0.75f); // Let movement happen
+        Release(keyboard.wKey);
+
+        yield return new WaitForSeconds(.5f); // Let it settle
+
+        // move left
+        Press(keyboard.aKey);
+        yield return new WaitForSeconds(1.5f); // Let movement happen
+        Release(keyboard.aKey);
+
+        yield return new WaitForSeconds(.5f); // Let it settle
+
+        // first move up
+        Press(keyboard.wKey);
+        yield return new WaitForSeconds(1.75f); // Let movement happen
+        Release(keyboard.wKey);
+
+        yield return new WaitForSeconds(.5f); // Let it settle
 
         // move right
         Press(keyboard.dKey);
         yield return new WaitForSeconds(0.5f); // Let movement happen
         Release(keyboard.dKey);
+
+        yield return new WaitForSeconds(.5f); // Let it settle
 
         // move down
         Press(keyboard.sKey);
-        yield return new WaitForSeconds(0.5f); // Let movement happen
+        yield return new WaitForSeconds(0.75f); // Let movement happen
         Release(keyboard.sKey);
 
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(.5f); // Let it settle
 
         // move right
         Press(keyboard.dKey);
-        yield return new WaitForSeconds(0.5f); // Let movement happen
+        yield return new WaitForSeconds(1.0f); // Let movement happen
         Release(keyboard.dKey);
 
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(.5f); // Let it settle
+
+        // first move up
+        Press(keyboard.wKey);
+        yield return new WaitForSeconds(1.75f); // Let movement happen
+        Release(keyboard.wKey);
+
+        yield return new WaitForSeconds(.5f); // Let it settle
+
+        // move right
+        Press(keyboard.dKey);
+        yield return new WaitForSeconds(1.0f); // Let movement happen
+        Release(keyboard.dKey);
+
+        yield return new WaitForSeconds(.5f); // Let it settle
 
         Vector3 endPos = controller.transform.position;
         Debug.Log($"Moved from {startPos} to {endPos}");
 
         Assert.AreNotEqual(startPos.y, endPos.y, "Player did not move vertically after pressing W.");
+        Assert.Greater(endPos.y, -1.6, "Player Escaped Bounds");
+        Assert.Less(endPos.x, 8.5, "Player Escaped Bounds");
+        Assert.Greater(endPos.x, -9.1, "Player Escaped Bounds");
+        Assert.Less(endPos.y, 2.6, "Player Escaped Bounds");
 
         keyboard = null;
     }
